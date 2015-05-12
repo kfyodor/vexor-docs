@@ -34,7 +34,7 @@ Then you'll be redirected to the freshly added project.
 
 ## Project notification settings
 
-You can choose on which occasions you will be notified about your project's buildsstatuses. There're three available options:
+You can choose on which occasions you will be notified about your project's build statuses. There're three available options:
 
 + **Watching** (default): Get an email after each build is completed whther it's failed or succeeded.
 + **Not watching**: Get an email only if a build was initiated by your commit or pull request.
@@ -44,7 +44,7 @@ You can choose on which occasions you will be notified about your project's buil
 
 ## Project settings
 
-Secure env variables, SSH keys, build restrictions etc. can be configures on project's "Settings" page.
+Secure env variables, SSH keys and build restrictions can be configured on project's "Settings" page.
 
 ![Project settings page](./img/project-settings.png)
 
@@ -60,7 +60,7 @@ You can specify which branches you want to be built by a regular expression in t
 
 ![Project settings | Filter branches](./img/project-settings-build-restrictions.png)
 
-We don't build pull requests from the same repo by default, because builds are already initiated by pushes to a repo. This behavior can be changed by clicking on a "Build pull requests" checkbox (e.g. if you have filtered some branches but want to build all PRs). Pull requests from foreign repos are being built always, whether "Build pull requests" checkbox is on or not.
+We don't build pull requests from the same repo by default, because builds are already being initiated by pushes to a repo. This behavior can be changed by clicking on a "Build pull requests" checkbox (e.g. if you have filtered some branches but want to build all PRs). Pull requests from foreign repos are being built always, whether "Build pull requests" checkbox is on or not.
 
 ### Configuring build statuses on GitHub or GitLab (no BitBucket, sorry)
 
