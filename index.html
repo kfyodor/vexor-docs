@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Vexor-docs by konukhov</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Vexor-docs</h1>
+      <h2 class="project-tagline">Vexor.io documentation (in progress)</h2>
+      <a href="https://github.com/konukhov/vexor-docs" class="btn">View on GitHub</a>
+      <a href="https://github.com/konukhov/vexor-docs/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/konukhov/vexor-docs/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="vexor-documentation" class="anchor" href="#vexor-documentation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Vexor Documentation</h1>
+
+<h1>
+<a id="starting-with-vexor" class="anchor" href="#starting-with-vexor" aria-hidden="true"><span class="octicon octicon-link"></span></a>Starting with Vexor</h1>
+
+<h2>
+<a id="registration" class="anchor" href="#registration" aria-hidden="true"><span class="octicon octicon-link"></span></a>Registration</h2>
+
+<p>In order to start using Vexor you should have a GitHub or BitBucket account.</p>
+
+<p><img src="./img/01.png" alt="Sign up to Vexor"></p>
+
+<p>Vexor supports 3 popular source control providers: <a href="https://github.com">GitHub</a>, <a href="https://bitbucket.org">BitBucket</a> and <a href="https://gitlab.com">GitLab</a>. No matter which one you've signed up with, you can always connect another, as well as update your email address and name, on the Profile Settings page.</p>
+
+<p><img src="./img/02.png" alt="Profile settings"></p>
+
+<h2>
+<a id="team-settings" class="anchor" href="#team-settings" aria-hidden="true"><span class="octicon octicon-link"></span></a>Team settings</h2>
+
+<p>Collaborators can be invited to your team on the "Users" page. Each user can be assigned with a role Admin or Developer. Developers cannot remove projects and users to the team.</p>
+
+<p><img src="./img/04.png" alt="Team settings"></p>
+
+<h2>
+<a id="adding-a-project" class="anchor" href="#adding-a-project" aria-hidden="true"><span class="octicon octicon-link"></span></a>Adding a project</h2>
+
+<p>There's a list of all repos imported from your connected accounts in the "Add project" section.</p>
+
+<p><img src="./img/03.png" alt="Projects list"></p>
+
+<p>To add a project and make a first build just press "Add". You'll be asked to specify a project's language while adding.</p>
+
+<p><img src="./img/05.png" alt="Adding a project"></p>
+
+<p>Then you'll be redirected to the freshly added project.</p>
+
+<p><img src="./img/06.png" alt="Project page"></p>
+
+<h2>
+<a id="project-notification-settings" class="anchor" href="#project-notification-settings" aria-hidden="true"><span class="octicon octicon-link"></span></a>Project notification settings</h2>
+
+<p>You can choose on which occasions you will be notified about your project's buildsstatuses. There're three available options:</p>
+
+<ul>
+<li>
+<strong>Watching</strong> (default): Get an email after each build is completed whther it's failed or succeeded.</li>
+<li>
+<strong>Not watching</strong>: Get an email only if a build was initiated by your commit or pull request.</li>
+<li>
+<strong>Ignoring</strong>: Don't get any emails about this project. </li>
+</ul>
+
+<p><img src="./img/07.png" alt="Project notifications settings"></p>
+
+<h2>
+<a id="project-settings" class="anchor" href="#project-settings" aria-hidden="true"><span class="octicon octicon-link"></span></a>Project settings</h2>
+
+<p>Secure env variables, SSH keys, build restrictions etc. can be configures on project's "Settings" page.</p>
+
+<p><img src="./img/project-settings.png" alt="Project settings page"></p>
+
+<h3>
+<a id="choosing-projects-language" class="anchor" href="#choosing-projects-language" aria-hidden="true"><span class="octicon octicon-link"></span></a>Choosing project's language</h3>
+
+<p>Project's language can be changed here.</p>
+
+<p><img src="./img/project-settings-language.png" alt="Project settings language"></p>
+
+<h3>
+<a id="configuring-build-restrictions" class="anchor" href="#configuring-build-restrictions" aria-hidden="true"><span class="octicon octicon-link"></span></a>Configuring build restrictions</h3>
+
+<p>You can specify which branches you want to be built by a regular expression in the "Filter pushes" popup. </p>
+
+<p><img src="./img/project-settings-build-restrictions.png" alt="Project settings | Filter branches"></p>
+
+<p>We don't build pull requests from the same repo by default, because builds are already initiated by pushes to a repo. This behavior can be changed by clicking on a "Build pull requests" checkbox (e.g. if you have filtered some branches but want to build all PRs). Pull requests from foreign repos are being built always, whether "Build pull requests" checkbox is on or not.</p>
+
+<h3>
+<a id="configuring-build-statuses-on-github-or-gitlab-no-bitbucket-sorry" class="anchor" href="#configuring-build-statuses-on-github-or-gitlab-no-bitbucket-sorry" aria-hidden="true"><span class="octicon octicon-link"></span></a>Configuring build statuses on GitHub or GitLab (no BitBucket, sorry)</h3>
+
+<p>Build statuses shown in pull requests could be configured here. Enabled by default. </p>
+
+<p><img src="./img/project-settings-build-statuses.png" alt="Project settings | Build statuses"></p>
+
+<h3>
+<a id="canceling-running-builds-after-a-push-to-the-same-branch" class="anchor" href="#canceling-running-builds-after-a-push-to-the-same-branch" aria-hidden="true"><span class="octicon octicon-link"></span></a>Canceling running builds after a push to the same branch</h3>
+
+<p>You might want ongoing builds to get cancelled after a push to the same branch. Enabled by default.</p>
+
+<p><img src="./img/project-settings-cancel-builds.png" alt="Project settings | Cancel builds"></p>
+
+<h3>
+<a id="configuring-slack-notifications" class="anchor" href="#configuring-slack-notifications" aria-hidden="true"><span class="octicon octicon-link"></span></a>Configuring Slack notifications</h3>
+
+<p>Vexor can send build notifications to Slack channels. To enable this feature you should create an incoming webhook on the Slack integrations page and paste it to the "slack" section of the Vexor project settings page.</p>
+
+<p><img src="./img/project-settings-slack.png" alt="Project settings | Slack"></p>
+
+<h3>
+<a id="securing-environment-variables" class="anchor" href="#securing-environment-variables" aria-hidden="true"><span class="octicon octicon-link"></span></a>
+<a id="project-settings-env-vars"></a>Securing environment variables</h3>
+
+<p>You can add secure environment variables to your project (e.g. Heroku tokens, Code Climate keys, etc.). Note that env-vars which don't have to be secure could also be added via <code>.vexor.yml</code> config file.</p>
+
+<p><img src="./img/project-settings-env-vars.png" alt="Project settings | env vars"></p>
+
+<h3>
+<a id="adding-ssh-keys" class="anchor" href="#adding-ssh-keys" aria-hidden="true"><span class="octicon octicon-link"></span></a>Adding SSH keys</h3>
+
+<p>Additional SSH keys can also be added through the interface. Note that you might want to keep keys in a particular order. User-added SSH keys are being added to the agent before the project's deploy key, ordered from most recent to earliest.</p>
+
+<p><img src="./img/project-settings-ssh-keys.png" alt="Project settings | SSH keys"></p>
+
+<h2>
+<a id="vexor-config-file" class="anchor" href="#vexor-config-file" aria-hidden="true"><span class="octicon octicon-link"></span></a>Vexor config file</h2>
+
+<p>Project's config should be stored in <code>vexor.yml</code> (<code>.vexor.yml</code> works too) file in a root directory. For those who are migrating from Travis it is possible to use <code>.travis.yml</code> file but it's recommended to switch to <code>vexor.yml</code> config, because Vexor is not fully compatible with Travis and uses slightly different configuration options.</p>
+
+<h3>
+<a id="available-configuration-keys" class="anchor" href="#available-configuration-keys" aria-hidden="true"><span class="octicon octicon-link"></span></a>Available configuration keys</h3>
+
+<p><strong>Common options</strong></p>
+
+<ul>
+<li>
+<p><strong>language</strong> <em>string</em></p>
+
+<p>Specify a language so Vexor could run language-specific preparations for your project. If you don't have a Vexor config included in your repo's root, a default config will be used, which has only the <code>language</code> key based on a language you've chosen when added a repo to Vexor. If config file is empty, without language specified, your build won't we able to run.</p>
+
+<p>Example:</p>
+
+<div class="highlight highlight-yaml"><pre><span class="pl-s"><span class="pl-ent">language:</span> <span class="pl-s">ruby</span></span></pre></div>
+</li>
+<li>
+<p><strong>env</strong> <em>map</em></p>
+
+<p>Set up your environment variables here. For secure env-vars see <a href="#project-settings-env-vars">Configuring project ENV variables</a> section. Environment config consists of three sections: <code>global</code>, <code>exclude</code> and <code>matrix</code>.</p>
+
+<p><strong>Global</strong></p>
+
+<p>A list of global environment variables exported into the system.</p>
+
+<div class="highlight highlight-yaml"><pre><span class="pl-s"><span class="pl-ent">env:</span></span>
+  <span class="pl-s"><span class="pl-ent">global:</span></span>
+  <span class="pl-s">- <span class="pl-s">VAR1=some_stuff</span></span>
+  <span class="pl-s">- <span class="pl-s">VAR2="i'm a var with spaces"</span></span></pre></div>
+
+<p><strong>Matrix</strong></p>
+
+<p>A list of martix-specific variables. For each variable there will be one job started with this var + all vars from <code>global</code> section exported. See <a href="#parallelism">Parallelism</a> for better matrix understanding.</p>
+
+<div class="highlight highlight-yaml"><pre><span class="pl-s"><span class="pl-ent">env:</span></span>
+  <span class="pl-s"><span class="pl-ent">martix:</span></span>
+  <span class="pl-s">- <span class="pl-s">SCRIPT=script_for_one_job</span></span>
+  <span class="pl-s">- <span class="pl-s">SCRIPT=script_for_another_job</span></span></pre></div>
+
+<p><strong>Exclude</strong></p>
+
+<p>Soon</p>
+
+<p><strong>Full example</strong></p>
+
+<div class="highlight highlight-yaml"><pre><span class="pl-s"><span class="pl-ent">env:</span></span>
+  <span class="pl-s"><span class="pl-ent">global:</span></span>
+  <span class="pl-s">- <span class="pl-s">RAILS_ENV=test</span></span>
+  <span class="pl-s">- <span class="pl-s">DATABASE_URL=postgresql://postgres@herokupgserver.com/my_database</span></span>
+  <span class="pl-s"><span class="pl-ent">matrix:</span></span>
+  <span class="pl-s">- <span class="pl-s">SCRIPT="bundle exec rspec"</span></span>
+  <span class="pl-s">- <span class="pl-s">SCRIPT="bundle exec brakeman"</span></span>
+  <span class="pl-s">- <span class="pl-s">SCRIPT="bundle exec rubocop"</span></span>
+</pre></div>
+</li>
+<li>
+<p><strong>before_install</strong> <em>array</em></p>
+
+<p>A list of commands called before installation stage.</p>
+
+<div class="highlight highlight-yaml"><pre><span class="pl-s"><span class="pl-ent">before_install:</span></span>
+<span class="pl-s">- <span class="pl-s">echo called before installing any dependencies</span></span>
+<span class="pl-s">- <span class="pl-s">... etc.</span></span></pre></div>
+</li>
+<li>
+<p><strong>install</strong> <em>array</em></p>
+
+<p>By default we install a number of packages depending on a language specified at the beginning of your config file, including a language binary itself. Use this option to override this behavior.</p>
+
+<div class="highlight highlight-yaml"><pre><span class="pl-s"><span class="pl-ent">install:</span></span>
+<span class="pl-s">- <span class="pl-s">sudo apt-get install -y ruby-build rbenv</span></span>
+<span class="pl-s">- <span class="pl-s">rbenv install 2.1.2</span></span>
+<span class="pl-s">- <span class="pl-s">gem install bundler</span></span>
+<span class="pl-s">- <span class="pl-s">... etc.</span></span></pre></div>
+</li>
+<li>
+<p><strong>database</strong> <em>array</em></p>
+
+<p>A list of database-related configuration.</p>
+
+<p>We already have Postgresql 9.3 (with postgres-contrib), MySQL 5.6, MongoDB 2.6.5 and Redis 2.8.5 installed in containers.</p>
+
+<p><strong>Using PostgreSQL</strong></p>
+
+<p>Postgres starts automatically in containers. Use <code>postgres</code> user to execute psql command.</p>
+
+<div class="highlight highlight-yaml"><pre><span class="pl-s"><span class="pl-ent">database:</span></span>
+<span class="pl-s">- <span class="pl-s">psql -U postgres -c "create database test;"</span></span></pre></div>
+
+<p><strong>Using MySQL</strong></p>
+
+<p>MySQL is already running by default in containers. Use <code>root</code> user to call mysql queries.</p>
+
+<div class="highlight highlight-yaml"><pre><span class="pl-s"><span class="pl-ent">database:</span></span>
+– mysql <span class="pl-s">-<span class="pl-s">u root -e "create database test;"</span></span></pre></div>
+
+<p><em>Notice for Rails users</em>: by default we're already running all necessary database configuration to get Rails tests working so in most cases you don't have to write any database configuration at all. Use <code>database</code> config only if you want to override this behavior.</p>
+</li>
+<li>
+<p><strong>before_script</strong> <em>array</em></p>
+
+<p>A list of commands called after installation and database stages but before running tests. Usually it's used to install additional dependencies when the system's environment's already configured (e.g you need to install additional gems etc.)</p>
+
+<div class="highlight highlight-yaml"><pre><span class="pl-s"><span class="pl-ent">before_script:</span></span>
+<span class="pl-s">- <span class="pl-s">sudo npm install bower</span></span>
+<span class="pl-s">- <span class="pl-s">sudo gem install brakeman</span></span></pre></div>
+</li>
+<li>
+<p><strong>services</strong> <em>array</em></p>
+
+<p>Additional services you want to run in your container. For each specified service there will be <code>sudo service #{specified_service} start</code> command executed. <a href="https://github.com/vexor/vx-docker-image/tree/master/docker/trusty/playbooks/roles">Here</a> you can see which services are already present in our image.</p>
+
+<p><strong>Note</strong>: <em>There's an alias for <code>rabbitmq-server</code>. You could simply write <code>rabbitmq</code>.</em></p>
+
+<div class="highlight highlight-yaml"><pre><span class="pl-s"><span class="pl-ent">services:</span></span>
+<span class="pl-s">- <span class="pl-s">rabbitmq</span></span>
+<span class="pl-s">- <span class="pl-s">redis-server</span></span></pre></div>
+</li>
+<li>
+<p><strong>script</strong> <em>string</em></p>
+
+<p>You can override a command which runs tests. This might be useful together with <code>matrix</code> when you want to run your test in parallel.</p>
+
+<div class="highlight highlight-yaml"><pre><span class="pl-s"><span class="pl-ent">script:</span> <span class="pl-s">bundle exec rspec</span></span></pre></div>
+</li>
+<li>
+<p><strong>chdir</strong> <em>string</em>
+Your project's working directory. By default it's set to your repo's root directory (which is <code>~/vexor_org_name/project_name</code>).</p>
+
+<div class="highlight highlight-yaml"><pre><span class="pl-s"><span class="pl-ent">chdir:</span> <span class="pl-s">~</span></span></pre></div>
+</li>
+<li>
+<p><strong>timeout</strong> <em>int</em>
+Job's maximum running time in seconds. Default is 1 hour.</p>
+
+<div class="highlight highlight-yaml"><pre><span class="pl-c1"><span class="pl-ent">timeout:</span> 1800</span></pre></div>
+</li>
+<li>
+<p><strong>read_timeout</strong> <em>int</em></p>
+
+<p>If there wasn't any output within the read timeout (in seconds) a job will be shut down. </p>
+
+<div class="highlight highlight-yaml"><pre><span class="pl-c1"><span class="pl-ent">read_timeout:</span> 60</span></pre></div>
+</li>
+<li>
+<p><strong>cache</strong> <em>boolean</em></p>
+
+<p>Enable/disable dependencies caching. <code>True</code> by default.</p>
+
+<div class="highlight highlight-yaml"><pre><span class="pl-s"><span class="pl-ent">cache:</span> <span class="pl-s">false</span></span></pre></div>
+</li>
+</ul>
+
+<p><strong>Language versions</strong><a id="vexor-yml-language-versions"></a></p>
+
+<p>Each of these keys usually gets a list of language versions which you want to run tests against. If you specified env:matrix, there will be <code>versions_num * martix_size</code> jobs. See <a href="#parallelism">Paralleism</a> for better understanding.</p>
+
+<ul>
+<li>
+<strong>rvm</strong> <em>array</em>
+</li>
+<li>
+<strong>go</strong> <em>array</em>
+</li>
+<li>
+<strong>jdk</strong> <em>array</em>
+</li>
+<li>
+<strong>scala</strong> <em>array</em>
+</li>
+<li>
+<strong>node_js</strong> <em>array</em>
+</li>
+<li>
+<strong>python</strong> <em>array</em>
+</li>
+</ul>
+
+<p>Example:</p>
+
+<div class="highlight highlight-yaml"><pre><span class="pl-s"><span class="pl-ent">rvm:</span></span>
+<span class="pl-s">- <span class="pl-s">1.9.3</span></span>
+<span class="pl-s">- <span class="pl-s">2.0.0-p0</span></span>
+<span class="pl-s">- <span class="pl-s">2.1.1</span></span></pre></div>
+
+<h3>
+<a id="cancelling-and-restarting-a-build" class="anchor" href="#cancelling-and-restarting-a-build" aria-hidden="true"><span class="octicon octicon-link"></span></a>Cancelling and restarting a build</h3>
+
+<h4>
+<a id="cancel-a-build" class="anchor" href="#cancel-a-build" aria-hidden="true"><span class="octicon octicon-link"></span></a>Cancel a build</h4>
+
+<p>You can cancel any build by clicking a "Stop" button on a build page. A particular job cannot be stopped.</p>
+
+<p><img src="./img/cancelling-build.png" alt="Cancelling a build"></p>
+
+<h4>
+<a id="restart-a-build" class="anchor" href="#restart-a-build" aria-hidden="true"><span class="octicon octicon-link"></span></a>Restart a build</h4>
+
+<p>Any finished build can be restarted. </p>
+
+<p>If you want to restart a build without changing any build configuration, just click a "Rebuild" button on a build page.</p>
+
+<p><img src="./img/rebuild.png" alt="Rebuild"></p>
+
+<p>In case you want to quickly test some configuration options out without commiting every <code>vexor.yml</code> change to a repo, you can use "Edit config" feature. Click "Edit config" button on a build page, modify your configuration and then click "Rebuild with new config" button. A new build will be created.</p>
+
+<p><img src="./img/rebuild-with-new-config.png" alt="Rebuild with new config"></p>
+
+<h3>
+<a id="parallelism" class="anchor" href="#parallelism" aria-hidden="true"><span class="octicon octicon-link"></span></a>Parallelism</h3>
+
+<p>One of the Vexor's main advantages is that it can run an unlimited amount of jobs in parallel. There're several ways to set up parallelim.</p>
+
+<h4>
+<a id="running-tests-in-parallel-against-different-language-versions" class="anchor" href="#running-tests-in-parallel-against-different-language-versions" aria-hidden="true"><span class="octicon octicon-link"></span></a>Running tests in parallel against different language versions.</h4>
+
+<p>You can specify different language versions (see <a href="#vexor-yml-language-versions">Language versions</a> for details) in <code>vexor.yml</code> config file. For each version there will be a job started.</p>
+
+<p><strong>Example:</strong></p>
+
+<p>Config:</p>
+
+<div class="highlight highlight-yaml"><pre><span class="pl-s"><span class="pl-ent">rvm:</span></span>
+  <span class="pl-s">- <span class="pl-s">2.1.0</span></span>
+  <span class="pl-s">- <span class="pl-s">2.0.0</span></span>
+  <span class="pl-s">- <span class="pl-s">1.9.3</span></span>
+  <span class="pl-s">- <span class="pl-s">rbx-2</span></span></pre></div>
+
+<p>Result:</p>
+
+<p><img src="./img/parallelism-capistrano-example.png" alt="Parallelism | Capistrano example"></p>
+
+<h4>
+<a id="running-different-scripts-for-each-job" class="anchor" href="#running-different-scripts-for-each-job" aria-hidden="true"><span class="octicon octicon-link"></span></a>Running different scripts for each job.</h4>
+
+<p>Parallel jobs can also be configured via <code>env:matrix</code> key in <code>vexor.yml</code> file. The basic idea is that you specify a script which depends on an environment variable and assign different values to this variable in the matrix section of a config file. Here's an example of how we're using this aproach to build the Vexor web app:</p>
+
+<div class="highlight highlight-yaml"><pre><span class="pl-s"><span class="pl-ent">env:</span></span>
+  <span class="pl-s"><span class="pl-ent">matrix:</span></span>
+  <span class="pl-s">- <span class="pl-s">PROJECT=backend</span></span>
+  <span class="pl-s">- <span class="pl-s">PROJECT=frontend</span></span>
+
+<span class="pl-s"><span class="pl-ent">script:</span> <span class="pl-s">bundle exec rake test:${PROJECT}</span></span></pre></div>
+
+<p>And here's a resulting build:</p>
+
+<p><img src="./img/parallelism-vexor-example.png" alt="Parallelism | Vexor example"></p>
+
+<p>Here's another example of how to use matrix for build parallelization. We're gonna run Rspec, check security with Brakeman, check code quality with Rubocop and check our coffee, scss and haml files.</p>
+
+<div class="highlight highlight-yaml"><pre><span class="pl-s"><span class="pl-ent">env:</span></span>
+  <span class="pl-s"><span class="pl-ent">matrix:</span></span>
+    <span class="pl-s">- <span class="pl-s">BUILD_CMD='rspec'</span></span>
+    <span class="pl-s">- <span class="pl-s">BUILD_CMD='rubocop'</span></span>
+    <span class="pl-s">- <span class="pl-s">BUILD_CMD='brakeman -z'</span></span>
+<span class="pl-s"><span class="pl-ent">script:</span> <span class="pl-s">bundle exec ${BUILD_CMD}</span></span></pre></div>
+
+<p><img src="./img/parallelism-vexor-2-example.png" alt="Parallelism | Vexor 2 example"></p>
+
+<h4>
+<a id="using-language-versions-with-a-matrix" class="anchor" href="#using-language-versions-with-a-matrix" aria-hidden="true"><span class="octicon octicon-link"></span></a>Using language versions with a matrix.</h4>
+
+<p>"Matrix" and "language versions" approaches can be combined. A resulting build will be containing <code>versions_num * matrix_size</code> jobs.</p>
+
+<p>Example:</p>
+
+<div class="highlight highlight-yaml"><pre><span class="pl-s"><span class="pl-ent">env:</span></span>
+  <span class="pl-s"><span class="pl-ent">matrix:</span></span>
+  <span class="pl-s">- <span class="pl-s">TEST_SUITE=test</span></span>
+  <span class="pl-s">- <span class="pl-s">TEST_SUITE=cucumber</span></span>
+
+<span class="pl-s"><span class="pl-ent">rvm:</span></span>
+<span class="pl-c1">- 2.2</span>
+<span class="pl-c1">- 2.1</span>
+<span class="pl-c1">- 2.0  </span></pre></div>
+
+<p>And the result is:</p>
+
+<p><img src="./img/parallelism-jekyll-example.png" alt="Parallelism | Jekyll example"></p>
+
+<h4>
+<a id="parallel-rspec" class="anchor" href="#parallel-rspec" aria-hidden="true"><span class="octicon octicon-link"></span></a>Parallel Rspec</h4>
+
+<p>There's another option for Rails users. You can specify a number of parallel jobs and set <code>script</code> to <code>parallel_rspec</code> to run automatically Rspec jobs in parallel.</p>
+
+<pre><code>parallel: 4
+script: parallel_rspec
+</code></pre>
+
+<h2>
+<a id="deploiyng-your-application" class="anchor" href="#deploiyng-your-application" aria-hidden="true"><span class="octicon octicon-link"></span></a>Deploiyng your application</h2>
+
+<p>Soon.</p>
+
+<ul>
+<li>Capistrano examples</li>
+<li>Ansible examples</li>
+</ul>
+
+<h2>
+<a id="sshing-into-a-build" class="anchor" href="#sshing-into-a-build" aria-hidden="true"><span class="octicon octicon-link"></span></a>SSHing into a build</h2>
+
+<p>Soon.</p>
+
+<h2>
+<a id="billing" class="anchor" href="#billing" aria-hidden="true"><span class="octicon octicon-link"></span></a>Billing</h2>
+
+<p>Soon.</p>
+
+<h2>
+<a id="faq" class="anchor" href="#faq" aria-hidden="true"><span class="octicon octicon-link"></span></a>FAQ</h2>
+
+<p>Soon.</p>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/konukhov/vexor-docs">Vexor-docs</a> is maintained by <a href="https://github.com/konukhov">konukhov</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
+
