@@ -1,6 +1,6 @@
 # Vexor Documentation
 
-# Starting with Vexor
+# Getting started with Vexor
 
 ## Registration
 
